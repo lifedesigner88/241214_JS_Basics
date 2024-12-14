@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<div class="alert-box" id="alert">
+    <p id="text">알림창</p>
+    <button onclick="alertBoxOpen('none')">닫 기</button>
+</div>
+
+<button onclick="alertBoxOpen('block','아이디입력하세요')">버 튼1</button>
+<button onclick="alertBoxOpen('block', '비번입력하세요')">버 튼2</button>
+
+<script>
+    function alertBoxOpen(value, Innertext) {
+        document.getElementById('alert').style.display = value;
+        document.getElementById('text').innerHTML = Innertext;
+    }
+</script>
+
+</body>
+</html>

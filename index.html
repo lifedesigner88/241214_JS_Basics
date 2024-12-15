@@ -18,7 +18,16 @@
 <div class="black-bg">
     <div class="white-bg">
         <h4>로그인하세요</h4>
-        <button class="btn btn-danger" id="close">닫기</button>
+        <form action="success.html">
+            <div class="my-3">
+                <input id="id_input" type="text" class="form-control">
+            </div>
+            <div class="my-3">
+                <input id="pass_input" type="password" class="form-control">
+            </div>
+            <button id="id_submit" type="submit" class="btn btn-primary">전송</button>
+            <button class="btn btn-danger" id="close">닫기</button>
+        </form>
     </div>
 </div>
 
@@ -32,6 +41,7 @@
         </button>
     </div>
 </nav>
+
 <ul class="list-group">
     <li class="list-group-item">An item</li>
     <li class="list-group-item">A second item</li>
@@ -46,7 +56,29 @@
 <button id="test-btn"> 버튼 </button>
 <button id="modal-Open"> 로그인 </button>
 
+
+
+
+<div class="main-bg">
+    <h4> Shirts on Sale </h4>
+    <button id="login" class="btn btn-danger"> 로그인 </button>
+</div>
+
 <script>
+
+    $('form').on('submit', (e) => {
+        if ($('#id_input').val().trim() === '') {
+            console.log('안녕')
+            alert("아이디가 비어있습니다")
+            e.preventDefault();
+        }
+
+        if ($('#pass_input').val().trim().length < 6) {
+            alert("비밀번호가 짧아요")
+            e.preventDefault();
+
+        }
+    });
 
 
     $('#test-btn').on('click', () =>  {
@@ -61,6 +93,9 @@
         $('.black-bg').removeClass('show-modal');
     });
 
+    $('.navbar-toggler').on('click', () => {
+        $('.list-group').toggleClass('show').slideToggle();
+    });
 
 </script>
 
